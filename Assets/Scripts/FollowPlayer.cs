@@ -12,10 +12,10 @@ public class FollowPlayer : MonoBehaviour
     {
         if (target == null) return;
 
-        // Desired camera position
+        // this vector is used to position how far the camera will remain, and has a very cool feature of being edited in unity
         Vector3 desiredPosition = target.position + offset;
 
-        // Smoothly move camera
+        // this allows the camera to move in way that doesnt feel like its teleporting from one spot to another
         transform.position = Vector3.SmoothDamp(
             transform.position,
             desiredPosition,
@@ -23,7 +23,7 @@ public class FollowPlayer : MonoBehaviour
             smoothTime
         );
 
-        // Always look at player
+        // self exaplainatory right?
         transform.LookAt(target);
     }
 }
